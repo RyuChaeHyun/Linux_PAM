@@ -1,4 +1,13 @@
 # 🌾 Linux_PAM
+VirtualBox에서 Ubuntu VM 환경을 사용하여 **네트워크 충돌을 방지**하고 **보안 강화**를 목표로 고정 IP 설정과 비밀번호 규제를 적용하는 방법을 구현하였습니다.
+
+### 🎖️ 프로젝트 목표
+
+1. 복제된 VM 환경에서 유동 IP(DHCP)를 사용하면 네트워크 관리가 복잡해지기 때문에, 이를 개선하기 위해 **고정 IP를 설정하는 방법**을 다루고 있습니다.
+2. 시스템 보안 수준을 높이기 위해 **PAM 모듈을 사용한 비밀번호 규제 설정**을 통해 더 강력한 사용자 인증을 목표로 하게 되었습니다.
+
+<br>
+
 ### 📍 고정 ip 설정
 
 동일한 vm을 복제했을 때 dhcp 말고 다른 방법으로 연결해야한다. 
@@ -43,6 +52,8 @@ sudo netplan apply
     ip a  또는 ip addr
     ```
 
+<br>
+
 **고정 아이피 할당 완료** <br>
 10.0.2.21/24
 
@@ -55,6 +66,7 @@ sudo netplan apply
 
 
 **접속완료**
+
 <br>
 MobaXTerm 에서도 접속이 된다. <br> 
 ![moba](https://github.com/user-attachments/assets/7e99cc36-782f-46a9-a049-010df9bb36ae)
@@ -99,15 +111,18 @@ password    requisite     pam_pwquality.so retry=3 minlen=12 dcredit=-1 ucredit=
 
 4. 비밀번호 규제가 적용되었는지 테스트한다.
 
+
 ```yaml
 sudo passwd user02
 ```
 
 5. 규제를 지키지 않고 비밀번호 입력시 비밀번호가 생성되지 않는다.
 
-<br>
-
 ![pam1](https://github.com/user-attachments/assets/62d0c1b2-c674-4e8c-99f1-89c66e5d8942)
 
 <br>
 
+
+### 🤔 결론
+고정 IP 설정을 통해 동일한 VM을 복제하더라도 DHCP로 인한 IP 충돌을 방지할 수 있으며, 비밀번호 규제를 통해 보안 수준을 강화할 수 있다. <br>
+추후에는 네트워크 보안 강화를 위해 방화벽 설정, 사용자 접근 제어 정책 등의 추가적인 보안 설정을 적용하거나, 다양한 환경에서 네트워크 및 보안 정책이 어떻게 작동하는지 더 깊이 연구해보고 싶다.
