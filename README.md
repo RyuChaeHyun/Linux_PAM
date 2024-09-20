@@ -1,5 +1,5 @@
-# 🧑‍🌾 Linux_PAM
-### 고정 ip 설정
+# 🌾 Linux_PAM
+### 📍 고정 ip 설정
 
 동일한 vm을 복제했을 때 dhcp 말고 다른 방법으로 연결해야한다. 
 
@@ -61,7 +61,7 @@ MobaXTerm 에서도 접속이 된다. <br>
 
 --
 
-### 비밀번호 규제 설정
+### 📍 비밀번호 규제 설정
 
 비밀번호 규제를 설정하려면 PAM(Pluggable Authentication Modules) 설정을 변경해야 한다.
 
