@@ -68,8 +68,11 @@ sudo netplan apply
 **접속완료**
 
 <br>
+
 MobaXTerm 에서도 접속이 된다. <br>
-![mobaxterm](https://github.com/user-attachments/assets/8036ec05-7231-440d-a92c-d0fedb022480)
+
+![mobaxterm](https://github.com/user-attachments/assets/e5c2308a-ae2f-4aa6-acd2-e603b30801ee)
+
 
 --
 
